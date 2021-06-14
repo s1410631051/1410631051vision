@@ -24,7 +24,7 @@
                 "Content-Type": "application/json"
             },
             data:{
-                "Url": decodeURI(dataurl)
+                "Url": dataurl.serialize()
             },
             dataType:"json",
             success:{
