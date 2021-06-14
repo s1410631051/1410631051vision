@@ -25,12 +25,12 @@
             data:{
                 "Url": "https://peakvisor.com/img/news/Altai-mountain-range.jpg"
             },
+            dataType:"json",
             success:{
             function(data,status){
                 $("#output").append(data);
                 alert(status);
-            }},
-            dataType:"json"
+            }}
         });
       });
     });
