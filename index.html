@@ -17,8 +17,6 @@
       $("#btn").click(function(){
         //var dataurl = $("#img").val();
 	  var dataurl = "https://peakvisor.com/img/news/Altai-mountain-range.jpg";
-	  var enc = encodeURI(dataurl);
-	  var dec = decodeURI(enc);
         $.ajax({
             url:"https://1410631051vision.cognitiveservices.azure.com/customvision/v3.0/Prediction/cdaeaf2b-4669-43f8-b45b-86e4ee2ac6d7/classify/iterations/Iteration2/url", 
             type:"POST",
@@ -26,9 +24,10 @@
                 "Prediction-Key": "1a0507e55008481f99bfb5716204d79e"
             },
             data:{
-                "Url": JSON.stringify(dec)
+                "Url": JSON.stringify(dataurl)
             },
-	    contentType:"application/json",
+	    processData:"false",
+	    contentType:"application/json; charset=utf-8",
             dataType:"json",
             success:{
             function(data,status){
